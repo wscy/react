@@ -1,13 +1,20 @@
 import React,{Component} from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect,HashRouter,hashHistory } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-import {WrappedNormalLoginForm} from './component/Login.js'
+import {Login} from './page/common/login/Login'
+import NavBar  from './component/navBar/navBar.js'
 class App extends Component {
+  
   render(){
-  return (
-    
- <WrappedNormalLoginForm  ></WrappedNormalLoginForm>
+   return (
+    <HashRouter>
+<Switch>
+  <Route exact path='/' component={Login}/>
+  <Route exact path='/index' component={NavBar}/>
+  <NavBar/>
+</Switch>
+    </HashRouter>
   
   )}
 }
