@@ -17,7 +17,7 @@ class NavBar extends React.Component{
 
 
  render(){ 
-     return (
+   return (
  <Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" />

@@ -7,10 +7,10 @@ import NavBar  from './component/navBar/navBar.js'
 class App extends Component {
   
   render(){
-   return (
-    <HashRouter>
+   return (        
+  <HashRouter>         
 <Switch>
-  <Route exact path='/' component={Login}/>
+            <Route exact path='/' component={Login}/>
   <Route exact path='/index' component={NavBar}/>
   <NavBar/>
 </Switch>

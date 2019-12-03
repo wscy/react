@@ -2,7 +2,7 @@ import { Form, Icon, Input, Button, Checkbox, AutoComplete } from 'antd';
 import React,{Component} from 'react';
 import 'antd/dist/antd.css';
 import {setToken} from './storeToken'
- class NormalLoginForm extends React.Component {
+ class NormalLoginForm extends React.Component { 
   constructor(props){
     super(props);
     const{history}=this.props
@@ -10,13 +10,13 @@ import {setToken} from './storeToken'
     isPasswordRight:false,
     history,
      user:
-       [{username:'tom',password:'123',isAdmin:false},
+       [
+       {username:'tom',password:'123',isAdmin:false},
        {username:'jerry',password:'123',isAdmin:false},
-       {username:'admin',password:'admin',isAdmin:true}]
-      
-     }
+       {username:'admin',password:'admin',isAdmin:true}
+      ] 
+    }
   }
-
   //  alertWrongPassword=(rule,value,callback)=>{
   //    console.log("---->>>>")
   //    if (this.state.isPasswordRight) {
@@ -28,7 +28,7 @@ import {setToken} from './storeToken'
   //  }
 
   handleSubmit = e => {
-    e.preventDefault();
+   e.preventDefault();
     this.props.form.validateFields((err, values) => {
       const{user,history}=this.state
       if (!err) {
@@ -36,7 +36,7 @@ import {setToken} from './storeToken'
           if(user[i].username===values.username && user[i].password===values.password){
             
             setToken(values)
-            history.push('index' )
+               history.push('index' )
           }
           else{
             // alert('wrong password or username');
@@ -76,7 +76,7 @@ import {setToken} from './storeToken'
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
-              placeholder="Password"
+                   placeholder="Password"
             />,
           )}
         </Form.Item>
